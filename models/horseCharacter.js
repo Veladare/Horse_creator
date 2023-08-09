@@ -57,9 +57,14 @@ horseCharacter.init(
             validate: {
                 isNumeric: true
             }
-        }
+        },
+        likeCount: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 0,  // Set default value to 0
+          }
+        },
 
-    },
     {
         sequelize,
         timestamps: false,
