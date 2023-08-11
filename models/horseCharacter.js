@@ -12,15 +12,15 @@ horseCharacter.init(
           autoIncrement: true
         },
 
-        horse_breed :{
+        horse_name : {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 isAlphanumeric: true
             }
         },
-
-        horse_name : {
+        
+        horse_breed :{
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
