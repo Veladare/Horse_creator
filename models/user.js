@@ -54,7 +54,7 @@ User.init(
     sequelize,
     timestamps: false,
     freezeTableName: true,
-    underscored: true,
+    underscored: true, // column names will be snake case, not camelCase -> so created_at not createdAt for example
     modelName: 'user',
   }
 );
