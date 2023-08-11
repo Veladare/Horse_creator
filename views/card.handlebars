@@ -1,0 +1,42 @@
+ <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Character Stats</h3>
+                <form id="horseStatsForm">
+                    <div class="stat">
+                        <label for="horse_name">Horse Name:</label>
+                        <input type="text" id="horse_name" name="horse_name" value="{{ horse_name }}">
+                    </div>
+                    <div class="stat">
+                        <label for="horse_breed">Horse Breed:</label>
+                        <input type="text" id="horse_breed" name="horse_breed" value="{{ horse_breed }}">
+                    </div>
+                    <div class="stat">
+                        <label for="horse_power">Horse Power:</label>
+                        <button type="button" class="decrement" data-stat="horse_power">-</button>
+                        <span>{{ horse_power }}</span>
+                        <button type="button" class="increment" data-stat="horse_power">+</button>
+                    </div>
+                    <div class="stat">
+                        <label for="horse_speed">Horse Speed:</label>
+                        <button type="button" class="decrement" data-stat="horse_speed">-</button>
+                        <span>{{ horse_speed }}</span>
+                        <button type="button" class="increment" data-stat="horse_speed">+</button>
+                    </div>
+                    <div class="stat">
+                        <label for="horse_smarts">Horse Smarts:</label>
+                        <button type="button" class="decrement" data-stat="horse_smarts">-</button>
+                        <span>{{ horse_smarts }}</span>
+                        <button type="button" class="increment" data-stat="horse_smarts">+</button>
+                    </div>
+                    <div class="stat">
+                        <label for="horse_weight">Horse Weight:</label>
+                        <button type="button" class="decrement" data-stat="horse_weight">-</button>
+                        <span>{{ horse_weight }}</span>
+                        <button type="button" class="increment" data-stat="horse_weight">+</button>
+                    </div>
+                    
+                    <button type="submit">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
