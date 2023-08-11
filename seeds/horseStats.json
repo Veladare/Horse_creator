@@ -1,0 +1,92 @@
+[
+    {
+        "horse_name": "ThunderStride",
+        "horse_breed": "Arabian",
+        "horse_power": 1,
+        "horse_speed": 40,
+        "horse_smarts": 5,
+        "horse_weight": 800,
+        "likeCount": 3
+    },
+    {
+        "horse_name": "Eclipse Runner",
+        "horse_breed": "Thoroughbred",
+        "horse_power": 1,
+        "horse_speed": 35,
+        "horse_smarts": 5,
+        "horse_weight": 1000,
+        "likeCount": 5
+    },
+    {
+        "horse_name": "Celestial Spring",
+        "horse_breed": "Andalusian",
+        "horse_power": 1,
+        "horse_speed": 35,
+        "horse_smarts": 5,
+        "horse_weight": 900,
+        "likeCount": 5
+    },
+    {
+        "horse_name": "Mystic Gale",
+        "horse_breed": "Andalusian",
+        "horse_power": 1,
+        "horse_speed": 35,
+        "horse_smarts": 5,
+        "horse_weight": 900,
+        "likeCount": 9
+    },
+    {
+        "horse_name": "Starlight Flash",
+        "horse_breed": "Appaloosa",
+        "horse_power": 1,
+        "horse_speed": 35,
+        "horse_smarts": 5,
+        "horse_weight": 950,
+        "likeCount": 1
+    },
+    {
+        "horse_name": "Golden Pegasus",
+        "horse_breed": "Clydesdale",
+        "horse_power": 1,
+        "horse_speed": 20,
+        "horse_smarts": 5,
+        "horse_weight": 1800,
+        "likeCount": 4
+    },
+    {
+        "horse_name": "Lunar Legend",
+        "horse_breed": "Morgan",
+        "horse_power": 1,
+        "horse_speed": 20,
+        "horse_smarts": 5,
+        "horse_weight": 900,
+        "likeCount": 7
+    },
+    {
+        "horse_name": "Aurora Gallop",
+        "horse_breed": "Quarter Horse",
+        "horse_power": 1,
+        "horse_speed": 55,
+        "horse_smarts": 5,
+        "horse_weight": 1000,
+        "likeCount": 1
+    },
+    {
+        "horse_name": "Nebula Nomad",
+        "horse_breed": "Tennessee Walking Horse",
+        "horse_power": 1,
+        "horse_speed": 15,
+        "horse_smarts": 5,
+        "horse_weight": 900,
+        "likeCount": 9
+    },
+    {
+        "horse_name": "Zodiac Zephyr",
+        "horse_breed": "Friesian",
+        "horse_power": 1,
+        "horse_speed": 20,
+        "horse_smarts": 5,
+        "horse_weight": 1300,
+        "likeCount": 6
+    }
+]
