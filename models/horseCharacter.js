@@ -32,7 +32,9 @@ horseCharacter.init(
             type: DataTypes.INTEGER,
             allowNull: false, 
             validate: {
-                isNumeric: true
+                isNumeric: true,
+                len: [1, 10]
+    
             }
         },
 
@@ -40,7 +42,8 @@ horseCharacter.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             validate: {
-                isNumeric: true
+                isNumeric: true,
+                len: [1, 10]
             }
         },
 
@@ -48,14 +51,16 @@ horseCharacter.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             validate: {
-                isNumeric: true
+                isNumeric: true,
+                len: [1, 10]
             }
         },
         horse_weight: {
             type: DataTypes.INTEGER,
             allowNull: false,
             validate: {
-                isNumeric: true
+                isNumeric: true,
+                len: [1, 2000]
             }
         },
         likeCount: {
