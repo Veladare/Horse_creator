@@ -69,10 +69,10 @@ horseCharacter.init(
             defaultValue: 0,  // Set default value to 0
         },
         description: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: true,
             validate: {
-                len: [0, 500]
+                len: [0, 1500]
             }
         }
     },

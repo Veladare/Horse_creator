@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
     <link rel="stylesheet" href="../../public/new.css">
-    
+
 </head>
 
 <body>
@@ -20,14 +20,14 @@
 
             <!-- Conditional rendering of login/logout -->
             {{#if userLoggedIn}}
-            <a href="/logout">Logout</a>
+            <a href="/logout" id="logout">Logout</a>
             {{else}}
             <a href="/login">Login</a>
             {{/if}}
         </nav>
     </header>
 
-    <main>   
+    <main>
         {{{body}}}
         {{{card}}}
     </main>
@@ -36,8 +36,8 @@
         <p>&copy; {{currentYear}} Your Company Name. All rights reserved.</p>
     </footer>
 
- 
-    <script src="../../controllers/index.js"></script> 
+
+    <script src="../../controllers/index.js"></script>
 </body>
 
 </html>
