@@ -45,3 +45,65 @@
             </div>
         </div>
     </div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const statsForm = document.getElementById("horseStatsForm");
+    const stats = ["horse_power", "horse_speed", "horse_smarts", "horse_weight"];
+    
+    stats.forEach((stat) => {
+      const decrementBtn = statsForm.querySelector(`[data-stat="${stat}"] .decrement`);
+      const incrementBtn = statsForm.querySelector(`[data-stat="${stat}"] .increment`);
+      const statSpan = statsForm.querySelector(`[data-stat="${stat}"] span`);
+      
+      decrementBtn.addEventListener("click", () => {
+        const currentValue = parseInt(statSpan.textContent);
+        if (currentValue > 1) {
+          statSpan.textContent = currentValue - 1;
+        }
+      });
+      
+      incrementBtn.addEventListener("click", () => {
+        const currentValue = parseInt(statSpan.textContent);
+        statSpan.textContent = currentValue + 1;
+      });
+    });
+
+    // Add event listener to the form's submit event
+    statsForm.addEventListener("submit", async (event) => {
+      event.preventDefault(); // Prevent the default form submission
+      
+      // Gather updated data from the form
+      const formData = new FormData(statsForm);
+      const horseId = formData.get("horse_id"); // Adjust the input name accordingly
+      
+      // Prepare the data to be sent in the PUT request
+      const updatedStats = {
+        horse_power: formData.get("horse_power"),
+        horse_speed: formData.get("horse_speed"),
+        horse_smarts: formData.get("horse_smarts"),
+        horse_weight: formData.get("horse_weight"),
+        likeCount: formData.get("likeCount"),
+        description: formData.get("description"),
+      };
+
+      try {
+        // Send a PUT request to update the horse stats
+        const response = await fetch(`/api/horses/${horseId}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedStats),
+        });
+
+        if (response.ok) {
+          // Handle successful response, e.g., show a success message
+        } else {
+          // Handle error response, e.g., show an error message
+        }
+      } catch (error) {
+        // Handle fetch error, e.g., show an error message
+      }
+    });
+  });
+</script>
