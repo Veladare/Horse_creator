@@ -18,7 +18,7 @@ router.get('/', async (req, res)=> {
     }
 });
 
-//should get 1 horse by its id
+//should get 1 horse by its id and render it to a non existing page atm
 router.get('/horseCharacter/:id', async (req, res) => {
     try {
       const horseData = await horseCharacter.findByPk(req.params.id);
