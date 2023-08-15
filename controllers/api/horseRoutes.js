@@ -3,7 +3,7 @@ const { horseCharacter } = require('../../models');
 const withAuth = require('../../utils/auth');
 
   //to create a horse, hopefully
-  router.post('/', withAuth, async (req, res) => {
+  router.post('/', async (req, res) => {
     try {
       const newHorse = await horseCharacter.create({
         ...req.body,
@@ -13,6 +13,16 @@ const withAuth = require('../../utils/auth');
       res.status(200).json(newHorse);
     } catch (err) {
       res.status(400).json(err);
+    }
+  });
+
+  router.get('/', async (req, res) => {
+    try {
+      const horses = await horseCharacter.findAll();
+      res.status(200).json(horses);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Error fetching posts' });
     }
   });
 
