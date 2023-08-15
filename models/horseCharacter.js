@@ -33,7 +33,8 @@ horseCharacter.init(
             allowNull: false,
             validate: {
                 isNumeric: true,
-                len: [1, 10]
+                min: 1,
+                max: 10
 
             }
         },
@@ -43,7 +44,8 @@ horseCharacter.init(
             allowNull: false,
             validate: {
                 isNumeric: true,
-                len: [1, 10]
+                min: 1,
+                max: 10
             }
         },
 
@@ -52,7 +54,8 @@ horseCharacter.init(
             allowNull: false,
             validate: {
                 isNumeric: true,
-                len: [1, 10]
+                min: 1,
+                max: 10
             }
         },
         horse_weight: {
@@ -60,7 +63,8 @@ horseCharacter.init(
             allowNull: false,
             validate: {
                 isNumeric: true,
-                len: [1, 2000]
+                min: 1,
+                max: 2000
             }
         },
         likeCount: {
@@ -69,10 +73,10 @@ horseCharacter.init(
             defaultValue: 0,  // Set default value to 0
         },
         description: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: true,
             validate: {
-                len: [0, 500]
+                len: [0, 1500]
             }
         }
     },
