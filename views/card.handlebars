@@ -1,109 +1,48 @@
- <div class="card">
-            <div class="card-body">
-                <h3 class="card-title">Character Stats</h3>
-                <form id="horseStatsForm">
-                    <div class="stat">
-                        <label for="horse_name">Horse Name:</label>
-                        <input type="text" id="horse_name" name="horse_name" value="{{ horse_name }}">
-                        <!-- May need to remove quotation marks on horse_name/horse_breed -->
-                    </div>
-                    <div class="stat">
-                        <label for="horse_breed">Horse Breed:</label>
-                        <input type="text" id="horse_breed" name="horse_breed" value="{{ horse_breed }}">
-                    </div>
-                    <div class="stat">
-                        <label for="horse_power">Horse Power:</label>
-                        <button type="button" class="decrement" data-stat="horse_power">-</button>
-                        <span>{{ horse_power }}</span>
-                        <button type="button" class="increment" data-stat="horse_power">+</button>
-                    </div>
-                    <div class="stat">
-                        <label for="horse_speed">Horse Speed:</label>
-                        <button type="button" class="decrement" data-stat="horse_speed">-</button>
-                        <span>{{ horse_speed }}</span>
-                        <button type="button" class="increment" data-stat="horse_speed">+</button>
-                    </div>
-                    <div class="stat">
-                        <label for="horse_smarts">Horse Smarts:</label>
-                        <button type="button" class="decrement" data-stat="horse_smarts">-</button>
-                        <span>{{ horse_smarts }}</span>
-                        <button type="button" class="increment" data-stat="horse_smarts">+</button>
-                    </div>
-                    <div class="stat">
-                        <label for="horse_weight">Horse Weight:</label>
-                        <button type="button" class="decrement" data-stat="horse_weight">-</button>
-                        <span>{{ horse_weight }}</span>
-                        <button type="button" class="increment" data-stat="horse_weight">+</button>
-                    </div>
-                    <div class="stat">
-                        <label for="description">Description:</label>
-                        <span>{{ description }}</span>
-                    </div>
-                    
-                    <button type="submit">Save</button>
-                </form>
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">Character Stats</h3>
+        <form id="horseStatsForm">
+            <div class="stat">
+                <label for="horse_name">Horse Name:</label>
+                <input type="text" id="horse_name" name="horse_name" value="{{ horse_name }}">
+                <!-- May need to remove quotation marks on horse_name/horse_breed -->
             </div>
-        </div>
+            <div class="stat">
+                <label for="horse_breed">Horse Breed:</label>
+                <input type="text" id="horse_breed" name="horse_breed" value="{{ horse_breed }}">
+            </div>
+            <div class="stat">
+                <label for="horse_power">Horse Power:</label>
+                <button type="button" class="decrement" data-stat="horse_power">-</button>
+                <span data-stat="horse_power">{{ horse_power }}</span>
+                <button type="button" class="increment" data-stat="horse_power">+</button>
+                <input type="hidden" id="horse_power" name="horse_power" value="{{ horse_power }}">
+            </div>
+            <div class="stat">
+                <label for="horse_speed">Horse Speed:</label>
+                <button type="button" class="decrement" data-stat="horse_speed">-</button>
+                <span data-stat="horse_speed">{{ horse_speed }}</span>
+                <button type="button" class="increment" data-stat="horse_speed">+</button>
+                <input type="hidden" id="horse_speed" name="horse_speed" value="{{ horse_speed }}">
+            </div>
+            <div class="stat">
+                <label for="horse_smarts">Horse Smarts:</label>
+                <button type="button" class="decrement" data-stat="horse_smarts">-</button>
+                <span data-stat="horse_smarts">{{ horse_smarts }}</span>
+                <button type="button" class="increment" data-stat="horse_smarts">+</button>
+                <input type="hidden" id="horse_smarts" name="horse_smarts" value="{{ horse_smarts }}">
+            </div>
+            <div class="stat">
+                <label for="horse_weight">Horse Weight:</label>
+                <button type="button" class="decrement" data-stat="horse_weight">-</button>
+                <span data-stat="horse_weight">{{ horse_weight }}</span>
+                <button type="button" class="increment" data-stat="horse_weight">+</button>
+                <input type="hidden" id="horse_weight" name="horse_weight" value="{{ horse_weight }}">
+            </div>
+
+            <button type="submit">Save</button>
+        </form>
     </div>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const statsForm = document.getElementById("horseStatsForm");
-    const stats = ["horse_power", "horse_speed", "horse_smarts", "horse_weight"];
-    
-    stats.forEach((stat) => {
-      const decrementBtn = statsForm.querySelector(`[data-stat="${stat}"] .decrement`);
-      const incrementBtn = statsForm.querySelector(`[data-stat="${stat}"] .increment`);
-      const statSpan = statsForm.querySelector(`[data-stat="${stat}"] span`);
-      
-      decrementBtn.addEventListener("click", () => {
-        const currentValue = parseInt(statSpan.textContent);
-        if (currentValue > 1) {
-          statSpan.textContent = currentValue - 1;
-        }
-      });
-      
-      incrementBtn.addEventListener("click", () => {
-        const currentValue = parseInt(statSpan.textContent);
-        statSpan.textContent = currentValue + 1;
-      });
-    });
-
-    // Add event listener to the form's submit event
-    statsForm.addEventListener("submit", async (event) => {
-      event.preventDefault(); // Prevent the default form submission
-      
-      // Gather updated data from the form
-      const formData = new FormData(statsForm);
-      const horseId = formData.get("horse_id"); // Adjust the input name accordingly
-      
-      // Prepare the data to be sent in the PUT request
-      const updatedStats = {
-        horse_power: formData.get("horse_power"),
-        horse_speed: formData.get("horse_speed"),
-        horse_smarts: formData.get("horse_smarts"),
-        horse_weight: formData.get("horse_weight"),
-        likeCount: formData.get("likeCount"),
-        description: formData.get("description"),
-      };
-
-      try {
-        // Send a PUT request to update the horse stats
-        const response = await fetch(`/api/horses/${horseId}`, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(updatedStats),
-        });
-
-        if (response.ok) {
-          // Handle successful response, e.g., show a success message
-        } else {
-          // Handle error response, e.g., show an error message
-        }
-      } catch (error) {
-        // Handle fetch error, e.g., show an error message
-      }
-    });
-  });
-</script>
+</div>
+</div>
+<script src="../js/horsegen.js"></script>
