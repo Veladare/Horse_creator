@@ -47,5 +47,28 @@ router.get('/horseCharacter/:id', async (req, res) => {
       res.status(400).json(err);
     }
   });
+// // Route to update horse stats 
+// router.put('/api/horses/:id', withAuth, async (req, res) => {
+//   try {
+//       const updatedHorse = await horseCharacter.update(
+//           {
+//               horse_power: req.body.horse_power,
+//               horse_speed: req.body.horse_speed,
+//               horse_smarts: req.body.horse_smarts,
+//               horse_weight: req.body.horse_weight,
+//               likeCount: req.body.likeCount, 
+//               description: req.body.description,
+//           },
+//           {
+//               where: {
+//                   id: req.params.id,
+//               },
+//           }
+//       );
+//       res.json(updatedHorse);
+//   } catch (err) {
+//       res.status(500).json(err);
+//   }
+// });
 
-  module.exports = router;
+module.exports = router;
