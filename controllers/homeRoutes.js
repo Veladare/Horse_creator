@@ -47,10 +47,10 @@ router.get('/', async (req, res) => {
       const initialHorseStats = {
         horse_name: '',
         horse_breed: '',
-        horse_power: 10,
-        horse_speed: 10,
-        horse_smarts: 10,
-        horse_weight: 10,
+        horse_power: 5,
+        horse_speed: 5,
+        horse_smarts: 5,
+        horse_weight: 5,
       };
   
       // render the handlebars template and pass the initialHorseStats object to it

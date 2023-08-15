@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { horseCharacter } = require('../../models');
-const withAuth = require('../../utils/auth');
 
   //to create a horse, hopefully
   router.post('/', async (req, res) => {
