@@ -56,7 +56,7 @@ router.get('/card', async (req, res) => {
 
 
 //to create a horse, hopefully
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const newHorse = await horseCharacter.create({
       ...req.body,
