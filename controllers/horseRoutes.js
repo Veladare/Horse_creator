@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { horseCharacter } = require('../../models');
-const withAuth = require('../../utils/auth');
+const { horseCharacter } = require('../models');
+const withAuth = require('../utils/auth');
 
 //route for getting all horses and displaying to homepage when user is logged in
 router.get('/', async (req, res) => {
@@ -35,7 +35,7 @@ router.get('/horseCharacter/:id', async (req, res) => {
 });
 
 // set up initial horse stats; don't know what this route should be called
-router.get('/', async (req, res) => {
+router.get('/card', async (req, res) => {
   try {
     // set the initial values for the horse stats
     const initialHorseStats = {

@@ -14,28 +14,28 @@
             <div class="stat">
                 <label for="horse_power">Horse Power:</label>
                 <button type="button" class="decrement" data-stat="horse_power">-</button>
-                <span>{{ horse_power }}</span>
+                <span data-stat="horse_power">{{ horse_power }}</span>
                 <button type="button" class="increment" data-stat="horse_power">+</button>
                 <input type="hidden" id="horse_power" name="horse_power" value="{{ horse_power }}">
             </div>
             <div class="stat">
                 <label for="horse_speed">Horse Speed:</label>
                 <button type="button" class="decrement" data-stat="horse_speed">-</button>
-                <span>{{ horse_speed }}</span>
+                <span data-stat="horse_speed">{{ horse_speed }}</span>
                 <button type="button" class="increment" data-stat="horse_speed">+</button>
                 <input type="hidden" id="horse_speed" name="horse_speed" value="{{ horse_speed }}">
             </div>
             <div class="stat">
                 <label for="horse_smarts">Horse Smarts:</label>
                 <button type="button" class="decrement" data-stat="horse_smarts">-</button>
-                <span>{{ horse_smarts }}</span>
+                <span data-stat="horse_smarts">{{ horse_smarts }}</span>
                 <button type="button" class="increment" data-stat="horse_smarts">+</button>
                 <input type="hidden" id="horse_smarts" name="horse_smarts" value="{{ horse_smarts }}">
             </div>
             <div class="stat">
                 <label for="horse_weight">Horse Weight:</label>
                 <button type="button" class="decrement" data-stat="horse_weight">-</button>
-                <span>{{ horse_weight }}</span>
+                <span data-stat="horse_weight">{{ horse_weight }}</span>
                 <button type="button" class="increment" data-stat="horse_weight">+</button>
                 <input type="hidden" id="horse_weight" name="horse_weight" value="{{ horse_weight }}">
             </div>
@@ -45,3 +45,4 @@
     </div>
 </div>
 </div>
+<script src="../js/horsegen.js"></script>
