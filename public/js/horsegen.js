@@ -40,6 +40,7 @@ document.getElementById('horseStatsForm').addEventListener('submit', async funct
     const horse_speed = document.getElementById('horse_speed').value;
     const horse_smarts = document.getElementById('horse_smarts').value;
     const horse_weight = document.getElementById('horse_weight').value;
+    const horse_description = document.getElementById('horse_description').value;
 
     // Construct the object to send to the server
     const horseCharacterData = {
@@ -48,7 +49,8 @@ document.getElementById('horseStatsForm').addEventListener('submit', async funct
         horse_power,
         horse_speed,
         horse_smarts,
-        horse_weight
+        horse_weight,
+        horse_description
     };
 
     try {
