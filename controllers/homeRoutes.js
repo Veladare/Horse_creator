@@ -9,6 +9,14 @@ router.get('/signup', (req, res) => {
   res.render('signup')
 });
 
+router.get('/signup-success', (req, res) => {
+  res.render('signup-success');
+});
+
+router.get('/login-success', (req, res) => {
+  res.render('login-success');
+});
+
 //route for getting all horses and displaying to homepage when user is logged in
 router.get('/', async (req, res) => {
   try {
