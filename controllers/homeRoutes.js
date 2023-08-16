@@ -1,8 +1,5 @@
 const router = require('express').Router();
-
-router.get('/', (req, res) => {
-  res.render('homepage')
-});
+const { horseCharacter } = require('../models');
 
 router.get('/login', (req, res) => {
   res.render('login')
@@ -20,8 +17,7 @@ router.get('/', async (req, res) => {
     const horses = horseData.map((horse) => horse.get({ plain: true }));
 
     res.render('homepage', {
-      horses,
-      logged_in: req.session.logged_in
+      horses
     });
   } catch (err) {
     res.status(500).json(err);
