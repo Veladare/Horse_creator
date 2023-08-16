@@ -18,6 +18,22 @@ res.json(horseData);
 });
 
 //THIS ONE WORKS
+//get a horse by id
+router.get('/:id', async (req, res) => {
+  // find one category by its `id` value
+  try{
+    const horseData = await horseCharacter.findByPk(req.params.id);
+
+    if (!horseData) {
+      return res.status(400).json({ message: 'No horse found with this id'});
+    }
+
+    res.status(200).json(horseData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+//THIS ONE WORKS
 //update horse
 router.put('/horseCharacter/:id',async (req, res) => {
  try {
