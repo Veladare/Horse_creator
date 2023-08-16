@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { horseCharacter } = require('../models');
 
 router.get('/', (req, res) => {
   res.render('homepage')
@@ -10,6 +11,14 @@ router.get('/login', (req, res) => {
 
 router.get('/signup', (req, res) => {
   res.render('signup')
+});
+
+router.get('/signup-success', (req, res) => {
+  res.render('signup-success');
+});
+
+router.get('/login-success', (req, res) => {
+  res.render('login-success');
 });
 
 //route for getting all horses and displaying to homepage when user is logged in
