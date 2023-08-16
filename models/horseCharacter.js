@@ -15,17 +15,11 @@ horseCharacter.init(
         horse_name: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                isAlphanumeric: true
-            }
         },
 
         horse_breed: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                isAlphanumeric: true
-            }
         },
 
         horse_power: {
@@ -72,7 +66,7 @@ horseCharacter.init(
             allowNull: false,
             defaultValue: 0,  // Set default value to 0
         },
-        description: {
+        horse_description: {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {

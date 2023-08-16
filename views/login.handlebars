@@ -1,17 +1,39 @@
-<div class="card">
-    <div class="card-header">Login</div>
-    <div class="card-body">
-        <form action="">
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email-login" placeholder="e.g. bobsmith@gmail.com"
-                    required>
+<div class="container">
+    <div class="columns is-centered">
+        <div class="column is-half">
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">Login</p>
+                </header>
+                <div class="card-content">
+                    <div class="content">
+                        <form action="">
+                            <div class="field">
+                                <label class="label" for="email">Email</label>
+                                <div class="control">
+                                    <input type="email" class="input" id="email-login"
+                                        placeholder="e.g. bobsmith@gmail.com" required>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label" for="password">Password</label>
+                                <div class="control">
+                                    <input type="password" class="input" id="password-login" placeholder="*******"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="field is-grouped"> <!-- Grouped field container -->
+                                <div class="control">
+                                    <button type="submit" class="button is-success login-form">Login</button>
+                                </div>
+                                <div class="control is-pulled-right"> <!-- Right-aligned control -->
+                                    <a href="/signup" class="button is-primary">Sign Up</a> <!-- Blue button -->
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password-login" placeholder="*******" required>
-            </div>
-            <button type="submit" class="btn btn-success login-form">Login</button>
-        </form>
+        </div>
     </div>
 </div>

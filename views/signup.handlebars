@@ -1,21 +1,43 @@
-<div class="card">
-    <div class="card-header">Sign Up</div>
-    <div class="card-body">
-        <form action="">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="name-signup" placeholder="e.g. bobsmith" required>
+<div class="container">
+    <div class="columns is-centered">
+        <div class="column is-half">
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">Sign Up</p>
+                </header>
+                <div class="card-content">
+                    <div class="content">
+                        <form action="">
+                            <div class="field">
+                                <label class="label" for="username">Username</label>
+                                <div class="control">
+                                    <input type="text" class="input" id="name-signup" placeholder="e.g. bobsmith"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label" for="email">Email</label>
+                                <div class="control">
+                                    <input type="email" class="input" id="email-signup"
+                                        placeholder="e.g. bobsmith@gmail.com" required>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label" for="password">Password</label>
+                                <div class="control">
+                                    <input type="password" class="input" id="password-signup" placeholder="*******"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <button type="submit" class="button is-success signup-form">Sign Up</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email-signup" placeholder="e.g. bobsmith@gmail.com"
-                    required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password-signup" placeholder="*******" required>
-            </div>
-            <button type="submit" class="btn btn-success signup-form">Sign Up</button>
-        </form>
+        </div>
     </div>
 </div>
