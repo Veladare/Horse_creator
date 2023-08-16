@@ -72,6 +72,9 @@ horseCharacter.init(
             validate: {
                 len: [0, 1500]
             }
+        },
+        horse_image: {
+            type: DataTypes.STRING
         }
     },
 
