@@ -66,7 +66,7 @@ router.get('/card', async (req, res) => {
       horse_power: 5,
       horse_speed: 5,
       horse_smarts: 5,
-      horse_weight: 5,
+      horse_magic: 5,
     };
 
     // render the handlebars template and pass the initialHorseStats object to it
