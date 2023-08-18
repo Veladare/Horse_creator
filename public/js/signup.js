@@ -17,7 +17,7 @@ const signupFormHandler = async (event) => {
             console.log('user created')
         } else {
 
-            alert(response.statusText);
+            alert("invalid email or password (must be 8 characters)");
         }
     }
 };
