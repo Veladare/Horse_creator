@@ -52,13 +52,13 @@ horseCharacter.init(
                 max: 10
             }
         },
-        horse_weight: {
+        horse_magic: {
             type: DataTypes.INTEGER,
             allowNull: false,
             validate: {
                 isNumeric: true,
                 min: 1,
-                max: 2000
+                max: 10
             }
         },
         likeCount: {

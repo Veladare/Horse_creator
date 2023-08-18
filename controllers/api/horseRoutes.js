@@ -45,7 +45,7 @@ router.put('/horseCharacter/:id', async (req, res) => {
         horse_power: req.body.horse_power,
         horse_speed: req.body.horse_speed,
         horse_smarts: req.body.horse_smarts,
-        horse_weight: req.body.horse_weight,
+        horse_magic: req.body.horse_magic,
         likeCount: req.body.likeCount,
         description: req.body.description,
       },
