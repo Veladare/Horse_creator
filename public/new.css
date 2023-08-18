@@ -90,3 +90,12 @@ body {
     color: red;
   }
 }
+
+.navbar {
+  margin-bottom: 2rem;
+}
+
+.footer {
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+}
