@@ -54,16 +54,48 @@ body {
   text-transform: uppercase;
   border-radius: 10px;
   text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
-  animation: rainbow 5s infinite; 
+  animation: rainbow 5s infinite;
 }
 
 @keyframes rainbow {
-  0% { color: red; }
-  14% { color: orange; }
-  28% { color: yellow; }
-  42% { color: green; }
-  57% { color: blue; }
-  71% { color: indigo; }
-  85% { color: violet; }
-  100% { color: red; }
+  0% {
+    color: red;
+  }
+
+  14% {
+    color: orange;
+  }
+
+  28% {
+    color: yellow;
+  }
+
+  42% {
+    color: green;
+  }
+
+  57% {
+    color: blue;
+  }
+
+  71% {
+    color: indigo;
+  }
+
+  85% {
+    color: violet;
+  }
+
+  100% {
+    color: red;
+  }
+}
+
+.navbar {
+  margin-bottom: 2rem;
+}
+
+.footer {
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
 }
