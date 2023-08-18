@@ -67,7 +67,7 @@ router.put('/horseCharacter/:id', async (req, res) => {
 
 //THIS WORKS
 //to create a horse, hopefully
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     const randomHorseImage = getRandomHorseImage();
 
