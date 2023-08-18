@@ -5,6 +5,10 @@ router.get('/login', (req, res) => {
   res.render('login')
 });
 
+router.get('/logout-success', (req, res) => {
+  res.render('logout-success')
+});
+
 router.get('/signup', (req, res) => {
   res.render('signup')
 });
@@ -16,6 +20,9 @@ router.get('/signup-success', (req, res) => {
 router.get('/login-success', (req, res) => {
   res.render('login-success');
 });
+router.get('/horsegen-success', (req, res) => {
+  res.render('horsegen-success');
+});
 
 //route for getting all horses and displaying to homepage when user is logged in
 router.get('/', async (req, res) => {
@@ -23,9 +30,10 @@ router.get('/', async (req, res) => {
     const horseData = await horseCharacter.findAll();
 
     const horses = horseData.map((horse) => horse.get({ plain: true }));
-
+    console.log(req.session);
     res.render('homepage', {
-      horses
+      horses,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);

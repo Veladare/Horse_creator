@@ -1,15 +1,20 @@
 <div class="card">
+    <div class="card-image">
+
+        <img src="{{horse_image}}" alt="{{horse_name}}">
+
+    </div>
     <div class="card-content">
-        <p class="title">
-            <a href="/horsePage/{{horseCharacter.id}}"></a>
+        <p class="title is-4">
+            <a href="/horsePage/{{horseCharacter.id}}">{{horse_name}}</a>
         </p>
-        <img src ="{{horse_image}}">
-        <p class="subtitle">By:{{horse_name}}</p>
-        <p class="subtitle">{{horse_breed}}</p>
-        <p class="subtitle">{{horse_power}}</p>
-        <p class="subtitle">{{horse_speed}}</p>
-        <p class="subtitle">{{horse_smarts}}</p> <!-- This may need to be horse_smarts -->
-        <p class="subtitle">{{horse_weight}}</p>
-        <p class="subtitle">{{horse_description}}</p>
+        <p class="subtitle is-6">{{horse_breed}}</p>
+        <div class="content">
+            <p><strong>Power:</strong> {{horse_power}}</p>
+            <p><strong>Speed:</strong> {{horse_speed}}</p>
+            <p><strong>Intelligence:</strong> {{horse_smarts}}</p>
+            <p><strong>Weight:</strong> {{horse_weight}} kg</p>
+            <p><strong>Description:</strong> {{horse_description}}</p>
+        </div>
     </div>
 </div>

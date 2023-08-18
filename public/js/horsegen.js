@@ -64,8 +64,7 @@ document.getElementById('horseStatsForm').addEventListener('submit', async funct
         });
 
         if (response.ok) {
-            document.location.replace('/'); // Redirect to the homepage if the response is OK
-            alert("You created a horse") //this shit is sloppy and lazy
+            document.location.replace('/horsegen-success'); // Redirect to the homepage if the response is OK
         } else {
             const data = await response.json();
             console.log('Error:', data);
