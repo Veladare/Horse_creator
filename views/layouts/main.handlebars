@@ -33,20 +33,27 @@
                 <a class="navbar-item" href="/contact">
                     Contact
                 </a>
+                {{#if logged_in}}
+                <a class="button is-primary create-horse-button" href="/card">
+                    Create Horse 🐴
+                </a>
+                {{else}}
+                Log in to create horse!
+                {{/if}}
             </div>
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a class="button is-primary">
+                        <div class="button is-primary">
                             <strong>
                                 <!-- Conditional rendering of login/logout -->
-                                {{#if userLoggedIn}}
-                                <a href="/logout" id="logout">Logout</a>
+                                {{#if logged_in}}
+                                <a href="/logout-success" id="logout">Logout</a>
                                 {{else}}
                                 <a href="/login">Login</a>
                                 {{/if}}
                             </strong>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -54,9 +61,7 @@
     </nav>
     <main>
 
-        <a class="button is-primary" href="/card">
-            Create Horse 🐴
-        </a>
+
         {{{body}}}
     </main>
     <footer class="footer">
@@ -88,6 +93,7 @@
             });
         });
     </script>
+    <script src="js/logout.js"></script>
 </body>
 
 </html>
