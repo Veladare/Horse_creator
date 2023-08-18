@@ -1,5 +1,9 @@
 <h1 class="title has-text-centered">The Stable</h1>
 
+<script src="https://unpkg.com/react/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone"></script>
+
 <div class="columns is-multiline">
     {{#each horses}}
     <div class="column is-one-third">
@@ -13,9 +17,126 @@
                 <p class="title">
                     <a href="/horseCharacter/{{id}}">{{horse_name}}</a>
                 </p>
-
+                <div id="star-rating-{{id}}"></div>
             </div>
         </div>
     </div>
     {{/each}}
 </div>
+
+<script type="text/babel">
+    const { React, ReactDOM } = window;
+
+    const Star = ({ 
+        value, 
+        color, 
+        handleHover, 
+        handleHoverLeave, 
+        handleClick, 
+        isFilled 
+    }) => {
+      if (!handleHover) {
+            return (
+                <span
+                    className="Star"
+                    style={ { color: color } }
+                    onMouseEnter={() => console.log("HOVERED IN")}
+                    onMouseLeave={() => console.log("HOVERED OUT")}
+                    onClick={() => alert("CLICKED A STAR!")}
+                >
+                    {isFilled ? "★" : "☆"}
+                </span>
+            );
+        }
+
+        return (
+            <span
+                className="Star"
+                style={ { color: color } }
+                onMouseEnter={() => handleHover(value)}
+                onMouseLeave={() => handleHoverLeave(value)}
+                onClick={() => handleClick(value)}
+            >
+                {isFilled ? "★" : "☆"}
+            </span>
+        );
+    };
+
+    class Rating extends React.Component {
+        static defaultProps = { max: 5 };
+
+        constructor(props) {
+            super(props);
+            this.state = {
+                dynamicValue: props.stars,
+                value: 0
+            };
+            this._colors = {
+                1: "#f44336",
+                2: "#FF5722",
+                3: "#FF9800",
+                4: "#FFC107",
+                5: "#FFEB3B"
+            };
+            this._meanings = {
+                0: "No Rating 🚫",
+                1: "Terrible Horse 🤮",
+                2: "Mediocre Horse 😒",
+                3: "Average Horse 😐",
+                4: "Solid Horse 🙂",
+                5: "Fantastic Horse 🔥"
+            };
+        }
+
+        handleClick = (newValue) => {
+            this.setState({
+                value: newValue,
+                dynamicValue: newValue
+            });
+        };
+
+        handleMouseEnter = (newValue) => {
+            this.setState({ dynamicValue: newValue });
+        };
+
+        handleMouseLeave = (newValue) => {
+            this.setState({ dynamicValue: this.state.value });
+        };
+
+        render() {
+            const { dynamicValue, value } = this.state;
+            const starSpans = [];
+            const max = this.props.max;
+            for (let v = 1; v <= max; v++) {
+                starSpans.push(
+                    <Star
+                        key={v}
+                        color={this._colors[v]}
+                        isFilled={v <= dynamicValue}
+                        value={v}
+                        handleHover={this.handleMouseEnter}
+                        handleHoverLeave={this.handleMouseLeave}
+                        handleClick={this.handleClick}
+                    />
+                );
+            }
+            return (
+                <div>
+                    <p>{this._meanings[value]}</p>
+                    {starSpans}
+                </div>
+            );
+        }
+    }
+
+    window.onload = function() {
+        console.log("Window is loaded!");
+
+        const ratingElements = document.querySelectorAll("[id^='star-rating-']");
+        console.log('Number of rating elements found:', ratingElements.length);
+        ratingElements.forEach(el => {
+            const root = ReactDOM.createRoot(el);
+            root.render(<Rating stars={4} />);
+        });
+    };
+</script>
