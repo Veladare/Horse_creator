@@ -9,13 +9,19 @@ function handleStatChange(event) {
 
     // Get the current value and convert it to a number
     let value = parseInt(input.value, 10);
+    const minValue = 0;
+    const maxValue = 10;
 
     // Increment or decrement the value based on the button's class
     if (event.target.classList.contains('increment')) {
-        value += 1;
-    } else if (event.target.classList.contains('decrement')) {
-        value -= 1;
-    }
+        if (value < maxValue) {
+          value += 1;
+        }
+      } else if (event.target.classList.contains('decrement')) {
+        if (value > minValue) {
+          value -= 1;
+        }
+      }
 
     // Update the input and span with the new value
     input.value = value;
